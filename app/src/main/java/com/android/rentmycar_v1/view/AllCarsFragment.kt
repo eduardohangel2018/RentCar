@@ -38,17 +38,4 @@ class CarsFragment : Fragment() {
         })
         return root
     }
-
-    fun fetchData(view: View) {
-        updateCar()
-    }
-
-    private fun updateCar() {
-        document.get()
-                .addOnSuccessListener { documentSnapshot ->
-                    var carName = documentSnapshot.getString(NAME)
-                    var carModel = documentSnapshot.getString(MODEL)
-                    var carPrice = documentSnapshot.getString(PRICE)
-                }
-    }
 }
