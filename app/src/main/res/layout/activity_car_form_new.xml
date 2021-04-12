@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txPrice" />
 
     <TextView
-        android:id="@+id/txStatus"
+        android:id="@+id/lbStatus"
         android:layout_width="130dp"
         android:layout_height="33dp"
         android:layout_marginStart="16dp"
@@ -82,7 +82,7 @@
         android:text="Status:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCat" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategory" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
@@ -90,7 +90,7 @@
         android:layout_height="106dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txStatus">
+        app:layout_constraintTop_toBottomOf="@+id/lbStatus">
 
         <RadioButton
             android:id="@+id/radAvailable"
@@ -120,14 +120,14 @@
         app:layout_constraintTop_toBottomOf="@+id/lbPrice" />
 
     <Spinner
-        android:id="@+id/spinnerCat"
+        android:id="@+id/spinnerCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/txStatus"
+        app:layout_constraintBottom_toTopOf="@+id/lbStatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txCategory" />

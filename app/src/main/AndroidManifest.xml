@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RentMyCar_v1">
-        <activity android:name=".view.CarFormActivityNew"></activity>
+        <activity android:name=".view.CarFormActivity"></activity>
         <activity
             android:name=".view.MainActivity"
             android:label="@string/app_name"

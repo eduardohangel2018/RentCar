@@ -1,5 +1,7 @@
 package com.android.rentmycar_v1.service.constants
 
+import android.provider.BaseColumns
+
 class DatabaseConstants private constructor() {
 
     object CARS {
