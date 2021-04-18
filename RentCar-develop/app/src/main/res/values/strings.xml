@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RentMyCar_v1</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_all">Todos</string>
+    <string name="menu_available">Disponíveis</string>
+    <string name="menu_rented">Alugados</string>
+    <string name="buttonSave">Button</string>
+    <string name="remover">Remover</string>
+    <string name="cancelar">Cancelar</string>
+
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_all"
+            android:icon="@drawable/ic_car"
+            android:title="@string/menu_all" />
+        <item
+            android:id="@+id/nav_available"
+            android:icon="@drawable/ic_car_rental"
+            android:title="@string/menu_available" />
+        <item
+            android:id="@+id/nav_rented"
+            android:icon="@drawable/ic_car_unavailable"
+            android:title="@string/menu_rented" />
+        <item
+            android:id="@+id/nav_contract"
+            android:icon="@drawable/ic_contract"
+            android:title="Contratos" />
+        <item
+            android:id="@+id/nav_proposal"
+            android:icon="@drawable/ic_proposal"
+            android:title="Propostas" />
+    </group>
+</menu>

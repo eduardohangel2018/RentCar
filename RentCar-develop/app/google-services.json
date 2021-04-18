@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1098262324273",
+    "project_id": "rentmycarapp-5097f",
+    "storage_bucket": "rentmycarapp-5097f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098262324273:android:2d9c58f2b29da855d22110",
+        "android_client_info": {
+          "package_name": "com.android.rentmycar_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098262324273-l539ntafskitt5srai76sr1jb5njh00i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.rentmycar_v1",
+            "certificate_hash": "0fa87a858f8658529f7c19faac26dc19260f2f1e"
+          }
+        },
+        {
+          "client_id": "1098262324273-r0ve0ocm563pqq7iiudrt5uf7co1rdmc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASkjKc1oo9y0TbiBNp78ub_fm_Ens8w1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098262324273-r0ve0ocm563pqq7iiudrt5uf7co1rdmc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
