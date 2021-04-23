@@ -1,4 +1,0 @@
-package com.android.rentmycar_v1.viewmodel
-
-class LoginViewModel {
-}
