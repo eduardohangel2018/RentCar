@@ -3,23 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_all">
+    app:startDestination="@id/login_graph">
 
     <fragment
         android:id="@+id/nav_all"
         android:name="com.android.rentmycar_v1.view.fragment.AllCarsFragment"
         android:label="@string/menu_all"
-        tools:layout="@layout/fragment_all" />
+        tools:layout="@layout/fragment_all" >
+        <action
+            android:id="@+id/action_nav_all_to_nav_available"
+            app:destination="@id/nav_available" />
+        <action
+            android:id="@+id/action_nav_all_to_nav_rented"
+            app:destination="@id/nav_rented" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_available"
         android:name="com.android.rentmycar_v1.view.fragment.AvailableFragment"
         android:label="@string/menu_available"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_available" />
 
     <fragment
         android:id="@+id/nav_rented"
         android:name="com.android.rentmycar_v1.view.fragment.RentedFragment"
         android:label="@string/menu_rented"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_rented" />
+    <action
+        android:id="@+id/global_action_login"
+        app:destination="@id/login_graph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@+id/listaProdutos"
+        app:popUpToInclusive="true" />
+    <navigation
+        android:id="@+id/login_graph"
+        android:label="Fluxo login"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.android.rentmycar_v1.view.fragment.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login" >
+            <action
+                android:id="@+id/action_loginFragment_to_registerFragment"
+                app:destination="@id/registerFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/registerFragment"
+            android:name="com.android.rentmycar_v1.view.fragment.RegisterFragment"
+            android:label="RegisterFragment" />
+        <action
+            android:id="@+id/action_global_nav_all"
+            app:destination="@id/nav_all" />
+    </navigation>
+
 </navigation>

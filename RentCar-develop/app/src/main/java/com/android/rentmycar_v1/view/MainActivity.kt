@@ -17,18 +17,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.android.rentmycar_v1.R
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_car_form.*
+import java.util.Observer
+
+private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var appBarConfiguration: AppBarConfiguration
 
-    var db = FirebaseFirestore.getInstance()
+//    var db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val firebaseAuth = Firebase.auth
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -55,38 +63,37 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Start Firebase
-    fun addCloudCar(view: View) {
-        var name:String = lbName.text.toString()
-        var model:String = lbModel.text.toString()
-        var price:String = lbPrice.text.toString()
-        var desc:String = lbDesc.text.toString()
-        var category:String = lbCat.text.toString()
-
-        if(name.isEmpty() || model.isEmpty() || price.isEmpty() || desc.isEmpty() || category.isEmpty()) return;
-        var dataToSave = HashMap<String, Any>()
-        dataToSave.put(NAME, lbName)
-        dataToSave.put(MODEL, lbModel)
-        dataToSave.put(PRICE, lbPrice)
-        dataToSave.put(DESCRIPTION, lbDesc)
-        dataToSave.put(CATEGORY, lbCat)
-        document.set(dataToSave)
-                .addOnSuccessListener {
-                    Log.e("Main", "Carro Calvo!")
-                    Toast.makeText(applicationContext, "Car has been added!", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener { e ->
-                    Log.e("Main", "Erro ao Adicionar o Carro", e)
-                    Toast.makeText(applicationContext, "Car could not be added!", Toast.LENGTH_SHORT).show()
-                }
-
-    }
-
-    companion object {
-        const val NAME = "name"
-        const val MODEL = "model"
-        const val PRICE = "price"
-        const val DESCRIPTION = "description"
-        const val CATEGORY = "category"
-        var document = FirebaseFirestore.getInstance().document("rent/cars")
-    }
+//    fun addCloudCar(view: View) {
+//        var name:String = lbName.text.toString()
+//        var model:String = lbModel.text.toString()
+//        var price:String = lbPrice.text.toString()
+//        var desc:String = lbDesc.text.toString()
+//        var category:String = lbCat.text.toString()
+//
+//        if(name.isEmpty() || model.isEmpty() || price.isEmpty() || desc.isEmpty() || category.isEmpty()) return;
+//        var dataToSave = HashMap<String, Any>()
+//        dataToSave.put(NAME, lbName)
+//        dataToSave.put(MODEL, lbModel)
+//        dataToSave.put(PRICE, lbPrice)
+//        dataToSave.put(DESCRIPTION, lbDesc)
+//        dataToSave.put(CATEGORY, lbCat)
+//        document.set(dataToSave)
+//                .addOnSuccessListener {
+//                    Log.e("Main", "Carro Calvo!")
+//                    Toast.makeText(applicationContext, "Car has been added!", Toast.LENGTH_SHORT).show()
+//                }
+//                .addOnFailureListener { e ->
+//                    Log.e("Main", "Erro ao Adicionar o Carro", e)
+//                    Toast.makeText(applicationContext, "Car could not be added!", Toast.LENGTH_SHORT).show()
+//                }
+//    }
+//
+//    companion object {
+//        const val NAME = "name"
+//        const val MODEL = "model"
+//        const val PRICE = "price"
+//        const val DESCRIPTION = "description"
+//        const val CATEGORY = "category"
+//        var document = FirebaseFirestore.getInstance().document("rent/cars")
+//    }
 }

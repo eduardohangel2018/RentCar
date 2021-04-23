@@ -61,34 +61,34 @@ class CarFormActivity : AppCompatActivity(), View.OnClickListener, AdapterView.O
         radAvailable.isChecked = true
 
         // Firebase
-        firestoreDB = FirebaseFirestore.getInstance()
-        val bundle = intent.extras
-        if (bundle != null) {
-            lbName.setText(bundle.getString("UpdateCarName"))
-            lbModel.setText(bundle.getString("UpdateCarModel"))
-            lbPrice.setText(bundle.getString("UpdateCarPrice"))
-            lbDesc.setText(bundle.getString("UpdateCarDesc"))
-            lbCat.setText(bundle.getString("UpdateCarCategory"))
-            buttonImage.setImageResource(bundle.getInt("updateCarImage"))
-        }
-
-        buttonSave.setOnClickListener {
-            val name = lbName.text.toString()
-            val model = lbModel.text.toString()
-            val price = lbPrice.text.toString()
-            val description = lbDesc.text.toString()
-            val category = lbCat.text.toString()
-
-            if (name.isNotEmpty() || model.isNotEmpty() || price.isNotEmpty() || description.isNotEmpty() || category.isNotEmpty()) {
-                if (id.isNotEmpty()) {
-                    updateCloudCar(id, name, model, price, description, category)
-                } else {
-                    addCloudCar(name, model, price, description, category)
-                }
-            }
-            finish()
-        }
-        // End Firebase
+//        firestoreDB = FirebaseFirestore.getInstance()
+//        val bundle = intent.extras
+//        if (bundle != null) {
+//            lbName.setText(bundle.getString("UpdateCarName"))
+//            lbModel.setText(bundle.getString("UpdateCarModel"))
+//            lbPrice.setText(bundle.getString("UpdateCarPrice"))
+//            lbDesc.setText(bundle.getString("UpdateCarDesc"))
+//            lbCat.setText(bundle.getString("UpdateCarCategory"))
+//            buttonImage.setImageResource(bundle.getInt("updateCarImage"))
+//        }
+//
+//        buttonSave.setOnClickListener {
+//            val name = lbName.text.toString()
+//            val model = lbModel.text.toString()
+//            val price = lbPrice.text.toString()
+//            val description = lbDesc.text.toString()
+//            val category = lbCat.text.toString()
+//
+//            if (name.isNotEmpty() || model.isNotEmpty() || price.isNotEmpty() || description.isNotEmpty() || category.isNotEmpty()) {
+//                if (id.isNotEmpty()) {
+//                    updateCloudCar(id, name, model, price, description, category)
+//                } else {
+//                    addCloudCar(name, model, price, description, category)
+//                }
+//            }
+//            finish()
+//        }
+//        // End Firebase
     }
 
     override fun onClick(v: View) {
@@ -154,20 +154,20 @@ class CarFormActivity : AppCompatActivity(), View.OnClickListener, AdapterView.O
     }
 
     // Firebase Functions
-    private fun addCloudCar(name: String, model: String, price: String, description: String, category: String) {
-        val car = Car(name, model, price, description, category).toMap()
-        firestoreDB!!.collection("cars")
-                .add(car)
-                .addOnSuccessListener { documentReference ->
-                    Log.e(TAG, "DocumentReference adicionado")
-                }
-                .addOnFailureListener {
-                    Log.e(TAG, "Erro ao adicionar")
-                }
-    }
-    private fun updateCloudCar(id: String, name: String, model: String, price: String, description: String, category: String) {
-        return
-    }
+//    private fun addCloudCar(name: String, model: String, price: String, description: String, category: String) {
+//        val car = Car(name, model, price, description, category).toMap()
+//        firestoreDB!!.collection("cars")
+//                .add(car)
+//                .addOnSuccessListener { documentReference ->
+//                    Log.e(TAG, "DocumentReference adicionado")
+//                }
+//                .addOnFailureListener {
+//                    Log.e(TAG, "Erro ao adicionar")
+//                }
+//    }
+//    private fun updateCloudCar(id: String, name: String, model: String, price: String, description: String, category: String) {
+//        return
+//    }
     // End Firebase functions
 
 }
